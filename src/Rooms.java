@@ -1,4 +1,23 @@
- abstract class Room {
+//
+/// **
+//
+//        * ABSTRACT CLASS - Room
+//
+//* Use Case 2: Basic Room Types & Static Availability
+//
+//* Description:
+//        * This abstract class represents a generic hotel room.
+//        *
+//
+//        * It models attributes that are intrinsic to a room type
+//* and remain constant regardless of availability.
+//
+//        * Inventory-related concerns are intentionally excluded.
+//
+//* @version 2.1
+//        */
+
+abstract class Room {
 
     protected  int numberOfBeds;
      protected  int squareFeet;
