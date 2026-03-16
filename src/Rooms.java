@@ -32,7 +32,7 @@ abstract class Room {
 
 
 
-     public void displayRoomDetails() {
+     public void displayRoom() {
          System.out.println("number of beds "+ numberOfBeds);
          System.out.println("size of beds in square Feet "+squareFeet);
          System.out.println("Price per night "+pricePerNight);
@@ -58,11 +58,11 @@ class SuiteRoom extends Room{
 public class Rooms {
     public static void main (String[] args){
         SingleRoom singleRoom=new SingleRoom();
-        singleRoom.displayRoomDetails();
+        singleRoom.displayRoom();
         DoubleRoom doubleRoom=new DoubleRoom();
-        doubleRoom.displayRoomDetails();
+        doubleRoom.displayRoom();
         SuiteRoom suiteRoom=new SuiteRoom();
-        suiteRoom.displayRoomDetails();
+        suiteRoom.displayRoom();
 
     }
 }

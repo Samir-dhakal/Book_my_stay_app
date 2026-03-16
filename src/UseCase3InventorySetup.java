@@ -26,7 +26,7 @@ public class UseCase3InventorySetup{
 SingleRoom singleRoom = new SingleRoom();
 DoubleRoom doubleRoom=new DoubleRoom();
 SuiteRoom suiteRoom=new SuiteRoom();
-         RoomInventory invertory=new RoomInventory();
+         RoomInventory invertory=new RoomInventory();//comment
          System.out.println("Single Room:");
          singleRoom.displayRoom();
          System.out.println("Available: "+invertory.getRoomAvailability().get("Single Room"));
