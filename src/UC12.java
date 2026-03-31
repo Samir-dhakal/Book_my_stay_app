@@ -14,9 +14,9 @@ import java.util.*;
  */
 public class UC12{
 
-    public static void main(String[] args) {
+    public static void main(String[] arg) {
 
-        PersistenceService persistence = new PersistenceService();
+        PersistenceService persistence = new PersistenceService() ;
         BookingSystem system;
 
         // Try loading previous state
