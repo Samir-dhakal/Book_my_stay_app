@@ -19,9 +19,9 @@ public class UC8{
         BookingReportService reportService = new BookingReportService();
 
         // Create sample reservations
-        Reservation r1 = new Reservation("R101", "Aayusha", "Single");
-        Reservation r2 = new Reservation("R102", "Samir", "Double");
-        Reservation r3 = new Reservation("R103", "Anjan", "Suite");
+        Reservations r1 = new Reservations("R101", "Aayusha", "Single");
+        Reservations r2 = new Reservations("R102", "Samir", "Double");
+        Reservations r3 = new Reservations("R103", "Anjan", "Suite");
 
         // Confirm bookings → add to history
         history.addReservation(r1);
@@ -45,13 +45,13 @@ public class UC8{
  *
  * Represents a confirmed reservation.
  */
-class Reservation {
+class Reservations {
 
     private String reservationId;
     private String customerName;
     private String roomType;
 
-    public Reservation(String reservationId, String customerName, String roomType) {
+    public Reservations(String reservationId, String customerName, String roomType) {
         this.reservationId = reservationId;
         this.customerName = customerName;
         this.roomType = roomType;
@@ -85,7 +85,7 @@ class Reservation {
  */
 class BookingHistory {
 
-    private List<Reservation> reservations;
+    private List<Reservations> reservations;
 
     public BookingHistory() {
         reservations = new ArrayList<>();
@@ -94,14 +94,14 @@ class BookingHistory {
     /**
      * Adds a confirmed reservation to history.
      */
-    public void addReservation(Reservation reservation) {
+    public void addReservation(Reservations reservation) {
         reservations.add(reservation);
     }
 
     /**
      * Returns all stored reservations.
      */
-    public List<Reservation> getAllReservations() {
+    public List<Reservations> getAllReservations() {
         return reservations;
     }
 
@@ -109,7 +109,7 @@ class BookingHistory {
      * Displays all reservations.
      */
     public void displayAllReservations() {
-        for (Reservation r : reservations) {
+        for (Reservations r : reservations) {
             r.display();
         }
     }
@@ -127,13 +127,13 @@ class BookingReportService {
     /**
      * Generates a summary report.
      */
-    public void generateSummaryReport(List<Reservation> reservations) {
+    public void generateSummaryReport(List<Reservations> reservations) {
 
         System.out.println("Total Bookings: " + reservations.size());
 
         Map<String, Integer> roomCount = new HashMap<>();
 
-        for (Reservation r : reservations) {
+        for (Reservations r : reservations) {
             roomCount.put(r.getRoomType(),
                     roomCount.getOrDefault(r.getRoomType(), 0) + 1);
         }
